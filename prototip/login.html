@@ -1,0 +1,285 @@
+<!--Napravio: Aleksa Funduk 2014/0219-->
+
+<!--
+<?php
+	require_once 'config.php';
+
+	if($_SESSION['username']) {
+		if(isset($_SESSION['url'])) 
+   			$url = $_SESSION['url'];
+   		else 
+   			$url = "index.php";
+   		
+   		header("Location: $url");
+   		exit;
+   	}
+
+   	if(isSet($_POST['submit'])) {
+   		$do_login = true;
+
+   		include_once 'do_login.php';
+   	}
+    ?>-->
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <HTML>
+      <HEAD>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <style type="text/css">
+        body {
+          font-family: arial;
+          padding: 0;
+          margin: 0;
+          background-color: gray;
+          font-size: 14px;
+        }
+        #login-container {
+         background-color: white;
+         padding-top: 20px;
+         padding-bottom: 10px;
+         width: 250px;
+         border-radius: 8px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+         -webkit-transform: translate(-50%, -50%); 
+         -moz-transform: translate(-50%, -50%); 
+         -o-transform: translate(-50%, -50%);
+       }
+       #login-container-2 {
+         margin-left: 25px;
+         margin-right: 25px;
+       }
+       #submit {
+         margin: 0 auto;
+         padding: 0;
+         color: white;
+         cursor: pointer;
+         border-radius: 4px;
+         font-family: arial black;
+         border: none;
+         box-shadow: 0px 5px darkorange;
+         width: 200px;
+         height: 40px;
+         background-color: orange;
+       }
+       #submit:hover {
+         background-color: #ffb52d;
+       }
+       #submit:focus {
+         outline:none;
+       }
+       #submit:active {
+         box-shadow: 0px 3px darkorange;
+         transform: translateY(2px);
+       }
+       #name, #pass {
+         border: none;
+         width: 195px;
+         height: 30px;
+         padding-left: 5px;
+         border-bottom: 2px solid lightgray;
+
+       }
+       input:-webkit-autofill {
+         -webkit-box-shadow: 0 0 0px 1000px white inset;
+       }
+       #name:focus, #pass:focus {
+         outline: none;
+         border-bottom-color: orange;
+       }
+       .invalid::-webkit-input-placeholder {
+         color: red;
+       }
+
+       .invalid:-moz-placeholder { /* Firefox 18- */
+         color: red;  
+       }
+
+       .invalid::-moz-placeholder {  /* Firefox 19+ */
+         color: red;  
+       }
+
+       .invalid:-ms-input-placeholder {  
+         color: red;  
+       }
+       .checkbox-holder {
+         width: 100%;
+         font-family: arial;
+         font-size: 14px;
+       }
+       #showhide, #autologin {
+         background-color: white;
+       }
+       label {
+         font-family: arial;
+         font-size: 14px;
+         color: black;
+       }
+       .checkBoxSlider {
+         width: 40px;
+         height: 18px;
+         background: lightgray;
+         display: inline-block;
+         margin-top: 5px;
+
+         -webkit-border-radius: 6px;
+         -moz-border-radius: 6px;
+         border-radius: 6px;
+         position: relative;
+
+         -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5);
+         -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5);
+         box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5);
+
+         -webkit-transition: all .4s ease;
+         -moz-transition: all .4s ease;
+         -o-transition: all .4s ease;
+         -ms-transition: all .4s ease;
+         transition: all .4s ease;
+       }
+       .checkBoxSlider label {
+         display: block;
+         width: 20px;
+         height: 14px;
+
+         -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+         border-radius: 5px;
+
+         -webkit-transition: all .4s ease;
+         -moz-transition: all .4s ease;
+         -o-transition: all .4s ease;
+         -ms-transition: all .4s ease;
+         transition: all .4s ease;
+         cursor: pointer;
+         position: absolute;
+         top: 2px;
+         left: 2px;
+         z-index: 1;
+
+         -webkit-box-shadow: 0px 0.5px 2px 0px black;
+         -moz-box-shadow: 0px 0.5px 2px 0px black;
+         box-shadow: 0px 0.5px 2px 0px black;
+         background: #fcfff4;
+
+         background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+         background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+         background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+         background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+         background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+       }
+       .checkBoxSlider input[type=checkbox]:checked + label {
+         left: 18px;
+       }
+       input[type=checkbox] {
+         visibility: hidden;
+       }
+       #date {
+        color: gray;
+      }
+      #date a {
+        color: gray;
+        font-weight: bolder;
+        text-decoration: none;
+      }
+      #date a:hover {
+        color: black;
+        text-decoration: underline;
+      }
+      #error {
+        font-size: 14px;
+      }
+    </style>
+  </HEAD>
+
+  <BODY style="background-color: gray; padding: 0; margin: 0;">
+   <div style="position: relative; height: 100vh; width: 100%;">
+   <div style="background-color: white; border-radius: 10px; display: inline-block; padding: 10px; margin: 10px"><div id="date">&laquo; <a href="./index.html">Glavna</a></div></div><br><br>
+   <div style="background-color: white; display: inline-block;">
+     <a href="./nalog.html" style="color: black">Prijava kao registrovan korisnik</a><br>
+     <a href="./admin.html" style="color: black">Prijava kao administrator</a>
+   </div>
+    <div id="login-container">
+      <div id="login-container-2">
+       <form name="login" method="post" action="login.php" onsubmit="return validate()">
+        <div style="display: none; color: red; margin-bottom: 3px;" id="error">Molim vas popunite sva polja!</div>
+
+        <!--<?php if(isSet($login_error)) echo '<div id="error_notification">The submitted login info is incorrect.</div>'; ?>-->
+
+        <input id="name" type="text" name="username" placeholder="Korisnički e-mail"><br><br>
+        <input type="password" name="password" id="pass" placeholder="Lozinka"><br><br>
+        <div class="checkbox-holder">
+         <div class="checkBoxSlider">   
+          <input type="checkbox" value="None" id="showhide" onclick="toggle_password(event,'pass');"/>
+          <label for="showhide" id="click"></label>
+        </div>
+        <div style="display: inline-block; transform: translateY(-3px);">Prikaži lozinku</div><br>
+        <div class="checkBoxSlider">   
+          <input type="checkbox" name="autologin" id="autologin" value="1"/>
+          <label for="autologin" id="click1"></label>
+        </div>
+        <div style="display: inline-block; transform: translateY(-3px);">Zapamti me</div>
+      </div><br>
+      <input id="submit" type="submit" name="submit" value="Prijava">
+    </form>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+ function swapInput(tag, type) {
+   var el = document.createElement('input');
+   el.id = tag.id;
+   el.type = type;
+   el.name = tag.name;
+   el.value = tag.value;
+   el.autocomplete = 'off';
+   el.placeholder = 'Lozinka'; 
+   var elem = document.getElementById('error');
+   if (!(elem.offsetWidth === 0 && elem.offsetHeight === 0)) {
+         //el.style.border = '1px solid red';
+         el.style.borderBottom = '2px solid red';
+       }
+       tag.parentNode.insertBefore(el, tag);
+       tag.parentNode.removeChild(tag);
+     }
+     function toggle_password(e,target){
+
+       var tag = document.getElementById(target);
+       var tag2 = document.getElementById("showhide");
+       if (tag2.checked == true) swapInput(tag, 'text');
+       else swapInput(tag, 'password'); 
+     }
+     var i = 0, j = 0;
+     document.getElementById("click").onclick = function() {
+      if (i%2 == 0)
+       document.getElementsByClassName("checkBoxSlider")[0].style.backgroundColor = "orange";
+     else 
+       document.getElementsByClassName("checkBoxSlider")[0].style.backgroundColor = "lightgray";
+     i++;
+   }
+   document.getElementById("click1").onclick = function() {
+    if (j%2 == 0)
+     document.getElementsByClassName("checkBoxSlider")[1].style.backgroundColor = "orange";
+   else 
+     document.getElementsByClassName("checkBoxSlider")[1].style.backgroundColor = "lightgray";
+   j++;
+ }
+ function validate() {
+  var x = document.forms["login"]["username"];
+  var y = document.forms["login"]["password"];
+  if (x.value == null || x.value == "" || y.value == null || y.value == "") {
+         //x.className += x.className ? '' : 'invalid';
+         //y.className += y.className ? '' : 'invalid';
+         x.style.borderBottom = '2px solid red';
+         y.style.borderBottom = '2px solid red';
+         document.getElementById("error").style.display = 'block';
+         return false;
+       }
+     }
+   </script>
+ </BODY>
+</HTML>
