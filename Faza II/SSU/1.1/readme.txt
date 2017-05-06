@@ -1,0 +1,1 @@
+Verzija 1.1 je nastala nakon formalne ispekcije

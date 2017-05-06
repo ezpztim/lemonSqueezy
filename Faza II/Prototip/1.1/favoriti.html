@@ -1,0 +1,148 @@
+<!--Napravio: Aleksa Funduk 2014/0219-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lemon Squeezy - Moji favoriti</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			font-family: arial;
+			background-color: gray;
+			background-image: url('./images/belgrade.jpg');
+			background-repeat: no-repeat;
+			background-size: 100vw auto;
+			background-attachment: fixed;
+			font-size: 14px;
+		}
+		#info-bar {
+			position: relative;
+			height: 50px;
+			background-color: rgba(0,0,0, 0.5);
+			border-bottom: 1px solid white;
+		}
+		#date {
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			transform: translate(0, -50%);
+			color: white;
+		}
+		#login {
+			right: 2%;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+		#login a {
+			color: white;
+			text-decoration: none;
+		}
+		#login a:hover {
+			border-bottom: 1px solid white;
+		}
+		#favoriti {
+			right: 18.5%;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+		#separator {
+			width: 1px; 
+			background-color: white; 
+			height: 50%;
+			position: absolute;
+			top: 50%;
+			right: 16%;
+			transform: translate(0, -50%);
+		}
+		footer {
+			height: 300px;
+			background-color: gray; 
+		}
+		#wrapper {
+			margin-top: 50vh;
+			position: relative;
+			padding-bottom: 10vh;
+		}
+		#wrapper-inner {
+			margin: 0 auto;
+			box-shadow: 0px 0px 5px gray;
+			z-index: 100;
+			position: relative;
+			width: 52.5%; 
+			background-color: white; 
+			border-radius: 10px;
+			padding-top: 9vh;
+			padding-bottom: 9vh;
+		}
+		#wrapper-bg {
+			position: absolute;
+			background-color: white;
+			height: calc(100% - 50vh);
+			width: 100%;
+			top: 50vh;
+			left: 0;
+			z-index: 99;
+		}
+		#logo-holder {
+			height: 40%;
+			position: absolute;
+			top: 15%;
+			left: 50%;
+		}
+		#home {
+			position: relative;
+		}
+		#home a {
+			color: gray;
+			font-weight: bolder;
+			text-decoration: none;
+		}
+		#home a:hover {
+			color: black;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div id="logo-holder">
+		<div style="position: relative; left: -50%; width: 100%; height: 100%;">
+			<a href="./index.html"><img src="./images/logo.png" height="100%" width="auto" title="Logo"></a>
+		</div>
+	</div>
+	<div style="position: absolute; top: 60px; left: 10px;background-color: white; border-radius: 10px; display: inline-block; padding: 10px;">
+		<div id="home">&laquo; <a href="./index.html">Glavna</a></div><br>
+		<div id="home">&laquo; <a href="./pretraga.html">Pretraga</a></div>
+	</div>
+	<div style="position: absolute; top: 60px; right: 10px;background-color: white;padding: 10px;">
+		<a href="./favoriti1.html">Kako ce da izgleda kad se dodaju oglasi</a>
+	</div>
+	<div id="info-bar">
+		<div id="date">Sreda, 15. Mart, 2017.</div>
+		<div id="login">
+			<a href="./login.html"><button>Prijava</button></a>
+			<a href="./registracija.html"><button>Napravi nalog</button></a>
+		</div>
+		<div id="separator"></div>
+		<div id="favoriti">
+			<a href="./favoriti.html"><button>Moji favoriti</button></a>
+		</div>
+	</div>
+
+	<div id="wrapper">
+		<div id="wrapper-bg"></div>
+		<div id="wrapper-inner">
+			<div style="height: 250px; position: relative; text-align: center;">
+				<span style="position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -50%);">
+					Niste dodali nijedan oglas u listu favorita.<br>Da bi ste dodali oglas u listu favorita potrebno je da pritisnete dugme "Dodaj u favorite".
+				</span>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+</html>

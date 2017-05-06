@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lemon squeezy - Izmena oglasa</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			font-family: arial;
+			background-color: gray;
+			font-size: 14px;
+		}
+		#upload-container {
+			display: inline-block;
+			width: 320px;
+			height: 30px;
+		    -webkit-box-shadow: inset 0px 0px 0px 0px gray, inset 0px -4px 0px 0px darkgray;
+			-moz-box-shadow: inset 0px 0px 0px 0px gray, inset 0px -4px 0px 0px darkgray;
+			box-shadow: inset 0px 0px 0px 0px gray, inset 0px -4px 0px 0px darkgray;
+			border-radius: 10px;
+			position: relative;
+			background-color: lightgray;
+		}
+		#upload-container #text {
+			position: absolute;
+			font-family: arial;
+			font-size: 14px;
+			display: block;
+			margin: 0;
+			top: 5px;
+			left: 25%;
+			transform: translateX(-50%);
+		}
+		#browse {
+			width: 80px;
+			height: 100%;
+			right: 0;
+			top: 0;
+			background-color: orange;
+			-webkit-box-shadow: inset 0px -4px 0px 0px darkorange;
+			-moz-box-shadow: inset 0px -4px 0px 0px darkorange;
+			box-shadow: inset 0px -4px 0px 0px darkorange;
+			position: absolute;
+			border-radius: 0px 10px 10px 0px;
+			cursor: pointer;
+			-webkit-touch-callout: none; 
+			-webkit-user-select: none;   
+			-khtml-user-select: none;    
+			-moz-user-select: none;     
+			-ms-user-select: none;
+			user-select: none;   
+		}
+		#clear {
+			width: 80px;
+			height: 100%;
+			right: 80px;
+			top: 0;
+			background-color: gray;
+			-webkit-box-shadow: inset 0px -4px 0px 0px dimgray;
+			-moz-box-shadow: inset 0px -4px 0px 0px dimgray;
+			box-shadow: inset 0px -4px 0px 0px dimgray;
+			position: absolute;
+			cursor: pointer;
+			-webkit-touch-callout: none; 
+			-webkit-user-select: none;   
+			-khtml-user-select: none;    
+			-moz-user-select: none;     
+			-ms-user-select: none;
+			user-select: none; 
+		}
+		#browse:hover {
+			background-color: #ffb52d;
+			-webkit-box-shadow: inset 0px -4px 0px 0px orange;
+			-moz-box-shadow: inset 0px -4px 0px 0px orange;
+			box-shadow: inset 0px -4px 0px 0px orange;
+		}
+		#clear:hover {
+			background-color: #8e8e8e;
+			-webkit-box-shadow: inset 0px -4px 0px 0px gray;
+			-moz-box-shadow: inset 0px -4px 0px 0px gray;
+			box-shadow: inset 0px -4px 0px 0px gray;
+		}
+		#browse:active {
+			-webkit-box-shadow: inset 0px -2px 0px 0px darkorange;
+			-moz-box-shadow: inset 0px -2px 0px 0px darkorange;
+			box-shadow: inset 0px -2px 0px 0px darkorange;
+		}
+		#clear:active {
+			-webkit-box-shadow: inset 0px -2px 0px 0px dimgray;
+			-moz-box-shadow: inset 0px -2px 0px 0px dimgray;
+			box-shadow: inset 0px -2px 0px 0px dimgray;
+		}
+		#browse:active p, #clear:active p {
+			margin-top: 6px;
+		}
+		#browse p, #clear p {
+			color: white;
+			font-family: arial black;
+			margin-top: 4px;
+			font-size: 13px;
+		}
+		#upload-container img {
+			display: inline-block;
+		}
+		#browse input[type=file] {
+        	display: none;
+		}
+		#browse label {
+			position: absolute;
+			left: 0;
+			top: 0;
+			min-width: 100%;
+			min-height: 100%;
+			cursor: pointer;
+			filter: alpha(opacity=0);
+			opacity: 0;
+			min-width: 100%;
+        	min-height: 100%;
+        	border-radius: 0px 10px 10px 0px;
+		}
+		#wrapper {
+			background-color: white;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border-radius: 10px;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 5px;
+		}
+		#wrapper-left {
+			background-color: white;
+			position: absolute;
+			left: 20%;
+			top: 50%;
+			border-radius: 10px;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 5px;
+			width: 200px;
+		}
+		#date a {
+			color: gray;
+			font-weight: bolder;
+			text-decoration: none;
+		}
+		#date a:hover {
+			color: black;
+			text-decoration: underline;
+		}
+		input, textarea {
+			border: 1px solid gray;
+		}
+		.center {
+			position: absolute; 
+			top: 50%; 
+			left: 50%; 
+			transform: translate(-50%, -50%); 
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+		}
+		.middle {
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			-webkit-transform: translate(0, -50%);
+			-moz-transform: translate(0, -50%);
+			-o-transform: translate(0, -50%);
+		}
+	</style>
+</head>
+<body>
+	<div style="background-color: white; border-radius: 10px; display: inline-block; padding: 10px; margin: 10px"><div id="date">&laquo; <a href="./index.html">Glavna</a></div></div>
+	<div style="background-color: white; border-radius: 10px; display: inline-block; padding: 10px; position: absolute; top: 10px; right: 10px">
+		<span>Aleksa Funduk</span>&nbsp;&nbsp;-&nbsp;
+		&nbsp;<a href="./nalog.html"><button>Moj nalog</button></a>&nbsp;<a href="./index.html"><button>Odjava</button></a>
+	</div>
+	<div id="wrapper-left">
+		Brisanje slika:
+		<hr>
+		<div style="padding-top: 100px; padding-bottom: 100px; text-align: center; display: none;" id="empty">Oglas ne sadrži slike.</div>
+		<div style="width: 100%; position: relative;" class="img">
+			<div style="position: absolute; top: 2px; right: 2px;"><button onclick="brisiSliku(this)">Izbriši</button></div>
+			<img src="./images/Desert.jpg" style="max-width: 100%;">
+		</div>
+	</div>
+	<div id="wrapper">
+		<h2 style="margin: 0; margin-top: 15px;">Izmena detalja oglasa</h2>
+		<hr style="margin-left: 5%;margin-right: 5%; margin-top: 10px; margin-bottom: 0"><br>
+		<form method="post" action="<?=$_SERVER['PHP_SELF']?>" enctype="multipart/form-data">
+			<table style="text-align: left; margin: 0 auto;display: inline-block;">
+				<tr>
+					<td>
+						Naziv oglasa*:
+					</td>
+					<td>
+						<input id="naziv" type="text" size="48" name="naziv" placeholder=" npr. Novi stan u Beogradu..." autocomplete="off" value="Stan sa pogledom na Vukov spomenik" required></input>
+					</td>
+				</tr>
+				<td>Tip*:</td>
+					<td>
+						<select name="tip-nekretnine" style="width: 150px">
+							<option value="Stambeni" selected>Stambeni objekat</option>
+							<option value="Poslovni">Poslovni objekat</option>
+							<option value="Zemljiste">Zemljiste</option>
+							<option value="Skladiste">Skladiste</option>
+						</select>
+					</td>
+				<tr>
+					<td>
+						Lokacija*:
+					</td>
+					<td>
+						<input type="text" size="30"  placeholder=" npr. Beograd, Novi Sad..." value="Beograd" name="lokacija" required></input>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Cena(din)*:
+					</td>
+					<td>
+						<input type="number" min="1" name="cena" placeholder=" npr. 30000" onkeypress="return isNumber(event)" value="20500" required></input>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Kvadratura(m<sup style="font-size: 10px">2</sup>)*:
+					</td>
+					<td>
+						<input type="number" min="1" name="kvadratura" placeholder=" npr. 99" onkeypress="return isNumber(event)" value="30" required></input>
+					</td>
+				</tr>
+				<tr>
+					<td>Broj soba*:</td>
+					<td><input type="number" placeholder=" npr. 3" min="1" value="1" required></input></td> 
+				</tr>
+				<tr>
+					<td>Nameštenost*:</td>
+					<td>
+						<select name="namestenost" style="width: 120px">
+							<option value="namesten" selected>Namešten</option>
+							<option value="polunamesten">Polunamešten</option>
+							<option value="nenamesten">Nenamešten</option>
+						</select>
+					</td> 
+				</tr>
+				<tr>
+					<td>Grejanje*:</td>
+					<td>
+						<select name="grenjanje" style="width: 120px">
+							<option value="centralno" selected>Centralno</option>
+							<option value="gas">Gas</option>
+							<option value="elektricno">Električno</option>
+							<option value="etazno">Etažno</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Ljubimci*:</td>
+					<td>
+						<select name="ljubimci" style="width: 120px">
+							<option value="zabranjeni" selected>Zabranjeni</option>
+							<option value="dozvoljeni">Dozvoljeni</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<hr style="margin-left: 5%;margin-right: 5%;">
+			<table style="text-align: left; margin: 0 auto;" >
+				<tr>
+					<td><label><input type="checkbox" name="cellar" class="radio" value="1">Podrum</label></td>
+					<td><label><input type="checkbox" name="phone" class="radio" value="1" checked>Telefon</label></td>
+					<td><label><input type="checkbox" name="parking" class="radio" value="1">Parking</label></td>
+					<td><label><input type="checkbox" name="air_condition" class="radio" value="1">Klima</label></td>
+					<td><label><input type="checkbox" name="terrace" class="radio" value="1">Terasa</label></td>
+					<td><label><input type="checkbox" name="cable" class="radio" value="1" checked>Kablovska</label></td>	
+					<td><label><input type="checkbox" name="internet" class="radio" value="1" checked>Internet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+				</tr>
+				<tr>
+					<td><label><input type="checkbox" name="garage" class="radio" value="1">Garaža</label></td>
+					<td><label><input type="checkbox" name="lift" class="radio" value="1" checked>Lift</label></td>
+					<td><label><input type="checkbox" name="pool" class="radio" value="1">Bazen</label></td>
+					<td><label><input type="checkbox" name="cable" class="radio" value="1">Alarm</label></td>	
+					<td><label><input type="checkbox" name="yard" class="radio" value="1">Dvorište</label> </td>
+					<td><label><input type="checkbox" name="in_construction" class="radio" value="1">U izgradnji</label></td>
+					<td><label><input type="checkbox" name="recent" class="radio" value="1">Novogradnja</label></td>
+				</tr>			
+			</table>
+			<hr style="margin-left: 5%;margin-right: 5%; margin-top: 10px;">
+			<center>
+				<table>
+					<tr>
+						<td>
+							Dodaj slike:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</td>
+						<td style="text-align: center;">
+							<div id="upload-container">
+								<p id="text">Nema izabranih slika.</p>
+								<div id="browse">
+									<p>Nadji <img src="./images/foldericon.png" height="10"></p>
+									<label for="upload"></label>
+									<input id="upload" type="file" name="files[]" multiple="multiple" accept="image/*" onchange="filenumber()">
+								</div>
+								<div id="clear" onclick="clearfiles('upload')">
+									<p>Obriši <img src="./images/trashcanicon.png" height="11"></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</center>
+			<hr style="margin-left: 5%;margin-right: 5%; margin-bottom: 10px;">
+			<label><input type="checkbox" name="sale" class="radio" value="1" checked>Popust</label>
+			<input type="number" placeholder=" Koliko?" min="1" style="width: 70px" value="50"></input>
+			<input type="text" placeholder=" Razlog (npr. popust za studente...)" size="40" value="Popust za studente"></input>
+			<hr style="margin-left: 5%;margin-right: 5%; margin-top: 10px;">
+			<table style="text-align: left; margin: 0 auto;">
+				<tr>
+					<td>Opis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td><textarea cols="48" rows="6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea></td>
+				</tr>
+			</table>
+			<hr style="margin-left: 5%;margin-right: 5%; margin-bottom: 10px;">
+			<input type="reset" value="Obriši">
+			<input type="submit" name="submit" value="Izmeni"></input>
+		</form>
+	</div>
+	<script type="text/javascript">
+		// dopusta samo brojeve (za kvadraturu i cenu)
+		function isNumber(evt) {
+			evt = (evt) ? evt : window.event;
+			var charCode = (evt.which) ? evt.which : evt.keyCode;
+			if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+				return false;
+			}
+			return true;
+		}
+		function clearfiles(target) {
+			var f = document.getElementById(target);
+			if(f.value){
+                f.value = '';
+        		if(f.value){
+            		var form = document.createElement('form'),
+                	parentNode = f.parentNode, ref = f.nextSibling;
+            		form.appendChild(f);
+            		form.reset();
+            		parentNode.insertBefore(f,ref);
+        		}
+    		}
+    		document.getElementById('text').innerHTML = "Nema izabranih slika.";
+		}
+		function filenumber() {
+			var num = document.getElementById('upload').files.length;
+			if (num == 1) {
+				document.getElementById('text').innerHTML = num + " slika.";
+			}
+			else {
+				document.getElementById('text').innerHTML = num + " slike.";
+			}
+		}
+		function brisiSliku(o) {
+			o.parentNode.parentNode.parentNode.removeChild(o.parentNode.parentNode);
+			var i = document.querySelectorAll('#wrapper-left .img').length;
+			if (i == 0) {
+				document.getElementById("empty").style.display = "block";
+			}
+		}
+	</script>
+</body>
+</html>

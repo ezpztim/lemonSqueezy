@@ -1,0 +1,148 @@
+<!--Napravio: Aleksa Funduk 2014/0219-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lemon Squeezy - Moj nalog</title>
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			font-family: arial;
+			background-color: gray;
+			font-size: 14px;
+		}
+		#date a {
+			color: gray;
+			font-weight: bolder;
+			text-decoration: none;
+		}
+		#date a:hover {
+			color: black;
+			text-decoration: underline;
+		}
+		#wrapper {
+			background-color: white;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 700px;
+			border-radius: 10px;
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+		#wrapper a {
+			color: black;
+			text-decoration: none;
+		}
+		#wrapper a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div style="background-color: white; border-radius: 10px; display: inline-block; padding: 10px; margin: 10px"><div id="date">&laquo; <a href="./index.html">Glavna</a></div></div>
+	<div style="background-color: white; border-radius: 10px; display: inline-block; padding: 10px; position: absolute; top: 10px; right: 10px">
+		<span>Aleksa Funduk</span>&nbsp;&nbsp;-&nbsp;
+		&nbsp;<a href="./nalog.html"><button>Moj nalog</button></a>&nbsp;<a href="./index.html"><button>Odjava</button></a>
+	</div>
+	<div id="wrapper">
+		<div style="position: absolute; top: 20px; right: 5%;"><a href="./novi.html"><button>Novi oglas</button></a></div>
+		<h2 style="margin: 0; margin-top: 20px;">Moj nalog</h2><br>
+		<hr style="margin-left: 5%;margin-right: 5%; margin-top: 0;"><br>
+		<div style="margin-left: 5%;margin-right: 5%; background-color: gray; height: 300px; position: relative; border-radius: 10px; box-shadow: inset 1px 1px 4px #000000;">
+			<div style="margin: 10px; display: inline-block; width: calc(100% - 20px); background-color: white; height: calc(100% - 20px); border-radius: 7px; box-shadow: 1px 1px 4px #000000;">
+				<table style="width: 100%; margin: 0 auto; border-collapse:collapse; text-align: left; border-radius: 7px;">
+					<tr>
+						<th style="border-bottom: 2px solid gray; text-align: center;">Br.</th>
+						<th style="border-bottom: 2px solid gray">Oglas</th>
+						<th style="border-bottom: 2px solid gray">Status</th>
+						<th style="border-bottom: 2px solid gray"></th>
+					</tr>
+					<tr>
+						<td style="border-bottom: 2px solid gray; text-align: center;">
+							1
+						</td>
+						<td style="border-bottom: 2px solid gray">
+							<a href="./oglas.html">Stan sa pogledom na Vu...</a>
+						</td>
+						<td style="border-bottom: 2px solid gray; color: green">
+							Odobren
+						</td>
+						<td style="text-align: right;border-bottom: 2px solid gray">
+							<button>Izmeni</button>
+							<button onclick="remove(this)">Izbriši</button>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 2px solid gray; text-align: center;">
+							2
+						</td>
+						<td style="border-bottom: 2px solid gray">
+							<a href="./oglas.html">Kancelarije u centru</a>
+						</td>
+						<td style="border-bottom: 2px solid gray; color: green">
+							Odobren
+						</td>
+						<td style="text-align: right;border-bottom: 2px solid gray">
+							<button>Izmeni</button>
+							<button onclick="remove(this)">Izbriši</button>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 2px solid gray; text-align: center;">
+							3
+						</td>
+						<td style="border-bottom: 2px solid gray">
+							<a href="">Novogradnja na Zvezdari</a>
+						</td>
+						<td style="border-bottom: 2px solid gray; color: red">
+							Odbijen (Ne postoji ulica)
+						</td>
+						<td style="text-align: right;border-bottom: 2px solid gray">
+							<button>Izmeni</button>
+							<button onclick="remove(this)">Izbriši</button>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 2px solid gray; text-align: center;">
+							4
+						</td>
+						<td style="border-bottom: 2px solid gray">
+							<a href="./oglas.html">Dorćolski stan</a>
+						</td>
+						<td style="border-bottom: 2px solid gray; color: green">
+							Odobren
+						</td>
+						<td style="text-align: right;border-bottom: 2px solid gray">
+							<button>Izmeni</button>
+							<button onclick="remove(this)">Izbriši</button>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 2px solid gray; text-align: center;">
+							5
+						</td>
+						<td style="border-bottom: 2px solid gray">
+							<a href="">Mali stan na Vračaru</a>
+						</td>
+						<td style="border-bottom: 2px solid gray; color: gray">
+							Čeka potvrdu
+						</td>
+						<td style="text-align: right;border-bottom: 2px solid gray;">
+							<button disabled="true">Izmeni</button>
+							<button disabled="true">Izbriši</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div><br>
+		<hr style="margin-left: 5%;margin-right: 5%; margin-top: 0;"><br>
+	</div>
+	<script type="text/javascript">
+		function remove(o) {
+			o.parentNode.parentNode.parentNode.removeChild(o.parentNode.parentNode);
+		}
+	</script>
+</body>
+</html>
