@@ -1,0 +1,240 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+	background-color: gray;
+	font-size: 14px;
+}
+input {
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+#infobox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #ffea5b;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 0 0 3px 2px black;
+	z-index: 300;
+	opacity: .9;
+}
+.button {
+	padding: 5px;
+	padding-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-family: arial;
+	font-weight: 900;
+	border: none;
+	box-shadow: inset 0px -5px #edbd02;
+	-webkit-box-shadow: inset 0px -5px #edbd02;
+	background-color: #ffe630;
+}
+.button:hover {
+	background-color: #ffea5b;
+}
+.button:active {
+	box-shadow: inset 0px -3px #edbd02;
+	transform: translateY(2px);
+	-webkit-transform: translateY(2px);
+	-moz-transform: translateY(2px);
+	-o-transform: translateY(2px);
+	padding-bottom: 8px;
+}
+.button:focus {
+	outline:none;
+}
+.button:disabled {
+	background-color: #ffea5b;
+	box-shadow: inset 0px -5px gold;
+}
+.button:disabled:hover {
+	cursor: not-allowed;
+}
+#backhome {
+	padding: 10px;
+}
+#home {
+	position: relative;
+}
+#home a {
+	color: gray;
+	font-weight: bolder;
+	text-decoration: none;
+}
+#home a:hover {
+	color: black;
+	text-decoration: underline;
+}
+#wrapper {
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+}
+#wrapper-left {
+	display: inline-block;
+	background-color: white;
+	width: 700px;
+	height: 80vh;
+	border-radius: 10px;
+	text-align: center;
+}
+#wrapper-left a {
+	color: black;
+	text-decoration: none;
+}
+#wrapper-left a:hover {
+	text-decoration: underline;
+}
+#wrapper-right {	
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 15px;
+	width: 300px;
+	height: 470px;
+}
+#rules, #brokenrules {
+	text-align: left;
+	background-color: white;
+	border-radius: 10px;
+}
+ul {
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 20px;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+}
+li {
+	margin-bottom: 2px;
+}
+.header {
+	background-color: #ffea5b;
+	border-bottom: 1px solid black;
+	border-radius: 10px 10px 0 0;
+	height: 45px;
+	position: relative;
+}
+.center {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%); 
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+}
+h2 {
+	margin: 0;
+}
+#newadd {
+	width: 640px; 
+	margin-top: 30px; 
+	margin-bottom: 30px
+}
+#newadd:active {
+	margin-bottom: 32px;
+}
+#account-button-holder {
+	padding: 5px 10px 5px 10px; 
+	position: absolute; 
+	top: 0; 
+	right: 0;
+}
+#nav {
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px;
+	height: 24px;
+	background-color: white;
+	position: relative;
+	border-radius: 10px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	/* Safari only override */
+	::i-block-chrome, #account-button-holder a {
+		vertical-align: middle;
+	}
+}
+#table-holder-outer {
+	margin: 30px; 
+	margin-bottom: 0; 
+	background-color: gray; 
+	height: calc(100% - 170px); 
+	position: relative; 
+	border-radius: 10px; 
+	box-shadow: inset 1px 1px 4px black;
+}
+#table-holder-inner {
+	margin: 10px; 
+	background-color: white; 
+	display: inline-block; 
+	width: 620px;
+	height: calc(100% - 20px);
+	border-radius: 7px; 
+	box-shadow: 1px 1px 4px black;
+}
+.table {
+	width: 595px; 
+	border-collapse:collapse; 
+	text-align: left; 
+	border-radius: 7px;
+}
+td {
+	border-bottom: 2px solid gray;
+}
+.tablebutton:active {
+	margin-bottom: 2px;
+}
+.ellipsis {
+	display: inline-block;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 180px;
+}
+#copywright {
+	width: 100%;
+	color: white;
+	font-weight: 600;
+	font-size: 12px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+#confirm, #end {
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px;
+	z-index: 2000;
+	text-align: center;
+	display: none;
+}
+#cover {
+	background-color: black; 
+	width: 100%; 
+	height: 100vh; 
+	z-index: 1000; 
+	opacity: .6;
+	display: none;
+}

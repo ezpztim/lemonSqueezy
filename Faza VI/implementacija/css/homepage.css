@@ -1,0 +1,326 @@
+/*Napravio: Aleksa Funduk 2014/0219*/
+body {
+	margin: 0;
+	padding: 0;
+	background-color: gray;
+	background-image: url('../images/belgrade.jpg');
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	font-family: arial;
+	font-size: 14px;
+}
+.bg {
+	height: 100vh;
+	position: relative;
+}
+.button {
+	padding: 5px;
+	padding-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-family: arial;
+	font-weight: 900;
+	border: none;
+	box-shadow: inset 0px -5px #edbd02;
+	-webkit-box-shadow: inset 0px -5px #edbd02;
+	background-color: #ffe630;
+}
+.button:hover {
+	background-color: #ffea5b;
+}
+.button:active {
+	box-shadow: inset 0px -3px #edbd02;
+    transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+	-moz-transform: translateY(2px);
+	-o-transform: translateY(2px);
+    padding-bottom: 8px;
+}
+.button:focus {
+    outline:none;
+}
+/*!!bg1!!*/
+#bg1 {
+	z-index: 0;
+}
+#info-bar {
+	position: relative;
+	height: 50px;
+	background-color: rgba(0,0,0, 0.5);
+	border-bottom: 1px solid white;
+}
+#date {
+	left: 10px;
+	color: white;
+}
+#button-holder {
+	display: inline-block;
+	right: 10px;
+}
+#button-holder a {
+	vertical-align: middle;
+}
+#favoriti {
+	background-color: transparent;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    vertical-align: middle;
+
+    border: 1px solid #ffe630;
+    border-radius: 4px;
+    padding: 8px;
+    color: #ffe630;
+    font-weight: bold;
+}
+#favoriti:hover {
+	background-color: #ffe630;
+	color: black;
+}
+#separator {
+	display: inline-block;
+	background-color: white; 
+	width: 1px;
+	height: 25px;
+	margin-right: 20px;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+#logo-holder {
+	height: 40%;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+}
+#search-bar {
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	width: 1060px;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	height: 50px;
+	border-radius: 10px;
+	background-color: white;
+}
+#search-bar a {
+	color: black;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+#search-bar a:hover {
+	color: #edbd02;
+}
+.form-space {
+	display: none;
+}
+input {
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+input[type=number] {
+	width: 50px;
+	background-color: white;
+}
+input[type=text], input[type=number] {
+	border: none;
+    height: 20px;
+    padding-left: 10px;
+    border-bottom: 2px solid lightgray;
+    background-color: white;
+}
+select {
+	height: 20px;
+	outline: none;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+}
+select:focus {	
+	box-shadow: 0 0 1px 1px gold;
+}
+input[type=text]:focus, input[type=number]:focus {
+    outline: none;
+    border-bottom-color: gold;
+}
+/*!!bg2!!*/
+#bg2 {
+	background-color: white;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+#bg2 h2 {
+	margin: 0;
+}
+#new-adds {
+	min-width: 1000px;
+	width: 90%;
+	height: 90%;
+	max-height: 396px;
+}
+#special-adds {
+	min-width: 1000px;
+	width: 90%;
+	height: 90%;
+	max-height: 396px;
+}
+.add-holder {
+	position: relative;
+	color: black;
+	height: calc(93.5% - 58px);
+	margin-top: .8%;
+	margin-bottom: .8%;
+	max-height: 329px;
+}
+.add-holder a {
+	color: black;
+}
+.add {
+	position: relative;
+	margin: 0;
+	height: calc(100% - 3px);
+	width: 20%;
+	min-width: 220px;
+	margin-right: 30px;
+	display: inline-block;
+	text-decoration: none;
+	border: 1px solid black;
+	border-bottom: 2px solid black;
+	vertical-align: top;
+	max-width: 356px;
+}
+.add-filler {
+	position: absolute; 
+	top: 50%; 
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+}
+.add-title {
+	font-weight: bold;
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+	display: inline-block;
+	width: 90%;
+}
+.add:hover {
+	box-shadow: 0 0 10px 3px gold;
+}
+.add img {
+	max-width: 110%; 
+}
+.popust {
+	color: white;
+	font-weight: bold;
+	z-index: 101;
+	position: absolute;
+	background-color: gold;
+	border: 1px solid  black;
+	width: 80%;
+	top: 10px;
+	left: -8px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.triangle {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	transform: translate(0, -90%);
+	-webkit-transform: translate(0, -90%);
+	-moz-transform: translate(0, -90%);
+	-o-transform: translate(0, -90%);
+	width: 0; 
+  	height: 0; 
+  	border-left: 10px solid transparent;
+  	border-right: 10px solid transparent;
+  	border-bottom: 12px solid white;
+}
+sup {
+	font-size: 10px;
+}
+.center {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%); 
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+}
+/* FOR IPAD */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+	body {
+		background-size: auto 100%;
+	}
+	#logo-holder {
+		height: 35%;
+		top: 12%;
+	}
+	#new-adds {
+		min-width: 0;
+	}
+	#special-adds {
+		min-width: 0;
+	}
+	.add {
+		min-width: 310px;
+	}
+	.button {
+		vertical-align: middle;
+	}
+	.add-holder {
+		overflow: hidden;
+	}
+	#search-bar {
+		top: 55%;
+		width: 250px;
+		height: 280px;
+	}
+	.form-data {
+		display: block;
+	}
+	.form-data a:before {
+		display: block;
+		background-color: orange;
+	}
+	.form-space {
+		display: block;
+	}
+	.form-space h2 {
+		margin: 0;
+		margin-bottom: 5px;
+	}
+	input[type=submit] {
+		width: 100%;
+		font-size: 16px;
+	}
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+     
+}

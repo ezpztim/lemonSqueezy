@@ -1,0 +1,268 @@
+/*Napravio: Aleksa Funduk 2014/0219*/
+body {
+	margin: 0;
+	padding: 0;
+	background-color: gray;
+	background-image: url('../images/belgrade.jpg');
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	font-family: arial;
+	font-size: 14px;
+}
+.button {
+	padding: 5px;
+	padding-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-family: arial;
+	font-weight: 900;
+	border: none;
+	box-shadow: inset 0px -5px #edbd02;
+	-webkit-box-shadow: inset 0px -5px #edbd02;
+	background-color: #ffe630;
+}
+.button:hover {
+	background-color: #ffea5b;
+}
+.button:active {
+	box-shadow: inset 0px -3px #edbd02;
+	transform: translateY(2px);
+	-webkit-transform: translateY(2px);
+	-moz-transform: translateY(2px);
+	-o-transform: translateY(2px);
+	padding-bottom: 8px;
+}
+.button:focus {
+	outline:none;
+}
+#info-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: rgba(0,0,0, 0.5);
+	border-bottom: 1px solid white;
+}
+#date {
+	left: 10px;
+	color: white;
+}
+#button-holder {
+	display: inline-block;
+	right: 10px;
+}
+#button-holder a {
+	vertical-align: middle;
+}
+#favoriti {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	cursor:pointer;
+	overflow: hidden;
+	outline:none;
+	vertical-align: middle;
+
+	border: 1px solid #ffe630;
+	border-radius: 4px;
+	padding: 8px;
+	color: #ffe630;
+	font-weight: bold;
+}
+#favoriti:hover {
+	background-color: #ffe630;
+	color: black;
+}
+#separator {
+	display: inline-block;
+	background-color: white; 
+	width: 1px;
+	height: 25px;
+	margin-right: 20px;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+footer {
+	height: 300px;
+	background-color: gray; 
+}
+#wrapper {
+	margin-top: 60vh;
+	position: relative;
+	padding-bottom: 10vh;
+}
+#wrapper-inner {
+	margin: 0 auto;
+	box-shadow: 0px 0px 5px gray;
+	z-index: 100;
+	position: relative;
+	width: 80%; 
+	max-width: 1200px;
+	min-width: 900px;
+	background-color: white; 
+	border-radius: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+#wrapper-bg {
+	position: absolute;
+	background-color: white;
+	height: calc(100% - 40vh);
+	width: 100%;
+	top: 40vh;
+	left: 0;
+	z-index: 99;
+}
+#logo-holder {
+	height: 40%;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+}
+#backhome {
+	position: absolute; 
+	top: 60px; 
+	left: 10px;
+	background-color: white; 
+	border-radius: 10px; 
+	display: inline-block; 
+	padding: 10px;
+}
+#home {
+	position: relative;
+}
+#home a {
+	color: gray;
+	font-weight: bolder;
+	text-decoration: none;
+}
+#home a:hover {
+	color: black;
+	text-decoration: underline;
+}
+.thumb {
+	transition-duration: .4s;
+	display: inline-block;
+}
+.thumb:hover {
+	opacity: .5;
+}
+#infobox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #ffea5b;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 0 0 3px 2px black;
+	z-index: 300;
+	opacity: .9;
+}
+.center {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%); 
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+}
+#image-holder {
+	width: 70%; 
+	height: 600px;
+	display: inline-block;
+	vertical-align: top;
+}
+#info-holder {
+	width: 30%; 
+	height: 600px; 
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+}
+#image-holder .row {
+	height: 190px; 
+	margin-bottom: 10px;
+}
+#image-holder .row table {
+	width: 100%; 
+	margin: 0;
+	height: 100%;  
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+#image-holder .row table td {
+	background-color: lightgray;
+	padding: 0;
+	position: relative;
+	width: 31%; 
+	height: 100%;
+}
+#image-holder .row table td img {
+	max-width: 100%;
+}
+.special-table {
+	border: 1px solid black;
+	width: 80%;
+}
+.special-table .special-row {
+	padding: 5px 0 5px 0;
+}
+.special-table .special-header {
+	background-color: black; 
+	color: white;
+}
+input[type=reset] {
+	background-image: url('../images/refreshicon.svg');
+	background-position: center 4.5px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	vertical-align: middle;
+}
+input {
+	border-radius: 0;
+}
+input[type=number] {
+	width: 50px;
+	background-color: white;
+}
+input[type=text], input[type=number] {
+	border: none;
+	height: 20px;
+	padding-left: 10px;
+	border-bottom: 2px solid lightgray;
+	background-color: white;
+}
+select {
+	height: 20px;
+	outline: none;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+}
+select:focus {	
+	box-shadow: 0 0 1px 1px gold;
+}
+input[type=text]:focus, input[type=number]:focus {
+	outline: none;
+	border-bottom-color: gold;
+}

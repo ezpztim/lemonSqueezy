@@ -1,0 +1,126 @@
+/*Napravio: Aleksa Funduk 2014/0219*/
+body {
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+	background-color: gray;
+	font-size: 14px;
+}
+.button {
+	padding: 5px;
+	padding-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-family: arial;
+	font-weight: 900;
+	border: none;
+	box-shadow: inset 0px -5px #edbd02;
+	background-color: #ffe630;
+}
+.button:hover {
+	background-color: #ffea5b;
+}
+.button:active {
+	box-shadow: inset 0px -3px #edbd02;
+	transform: translateY(2px);
+	-webkit-transform: translateY(2px);
+	-moz-transform: translateY(2px);
+	-o-transform: translateY(2px);
+	padding-bottom: 8px;
+}
+.button:focus {
+	outline:none;
+}
+#submit {
+	width: 80%;
+	vertical-align: middle;
+}
+#wrapper {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: white;
+	width: 400px;
+	border-radius: 10px;
+	text-align: center;
+}
+#date a {
+	color: gray;
+	font-weight: bolder;
+	text-decoration: none;
+}
+#date a:hover {
+	color: black;
+	text-decoration: underline;
+}
+hr {
+	margin: 0; 
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+input {
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+input[type=text], input[type=email], input[type=password] {
+	border: none;
+	height: 20px;
+	padding-left: 10px;
+	border-bottom: 2px solid lightgray;
+}
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+	outline: none;
+	border-bottom-color: gold;
+}
+input[type=reset] {
+	background-image: url('../images/refreshicon.svg');
+	background-position: center 4.5px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	vertical-align: middle;
+}
+#backhome {
+	position: absolute; 
+	top: 10px; 
+	left: 10px;
+	background-color: white; 
+	border-radius: 10px; 
+	display: inline-block; 
+	padding: 10px;
+}
+#home {
+	position: relative;
+}
+#home a {
+	color: gray;
+	font-weight: bolder;
+	text-decoration: none;
+}
+#home a:hover {
+	color: black;
+	text-decoration: underline;
+}
+.center {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%); 
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+}
+
+#error, #error1 {
+	display: none;
+}

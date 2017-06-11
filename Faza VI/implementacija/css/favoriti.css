@@ -1,0 +1,153 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+	background-color: gray;
+	background-image: url('./images/belgrade.jpg');
+	background-repeat: no-repeat;
+	background-size: 100vw auto;
+	background-attachment: fixed;
+	font-size: 14px;
+}
+.center {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%); 
+}
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+.button {
+	padding: 5px;
+	padding-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-family: arial;
+	font-weight: 900;
+	border: none;
+	box-shadow: inset 0px -5px #edbd02;
+	background-color: #ffe630;
+}
+.button:hover {
+	background-color: #ffea5b;
+}
+.button:active {
+	box-shadow: inset 0px -3px #edbd02;
+	transform: translateY(2px);
+	padding-bottom: 8px;
+}
+.button:focus {
+	outline:none;
+}
+#info-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: rgba(0,0,0, 0.5);
+	border-bottom: 1px solid white;
+}
+#date {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translate(0, -50%);
+	color: white;
+}
+#button-holder {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
+}
+#favoriti {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	cursor:pointer;
+	overflow: hidden;
+	outline:none;
+	vertical-align: middle;
+
+	border: 1px solid #ffe630;
+	border-radius: 4px;
+	padding: 8px;
+	color: #ffe630;
+	font-weight: bold;
+}
+#favoriti:hover {
+	background-color: #ffe630;
+	color: black;
+}
+#separator {
+	display: inline-block;
+	background-color: white; 
+	width: 1px;
+	height: 25px;
+	margin-right: 20px;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+#logo-holder {
+	height: 40%;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+}
+#wrapper {
+	margin-top: 60vh;
+	position: relative;
+	padding-bottom: 10vh;
+}
+#wrapper-inner {
+	margin: 0 auto;
+	box-shadow: 0px 0px 5px gray;
+	z-index: 100;
+	position: relative;
+	width: 52.5%; 
+	background-color: white; 
+	border-radius: 10px;
+	padding-top: 9vh;
+	padding-bottom: 9vh;
+}
+#wrapper-bg {
+	position: absolute;
+	background-color: white;
+	height: calc(100% - 40vh);
+	width: 100%;
+	top: 40vh;
+	left: 0;
+	z-index: 99;
+}
+#logo-holder {
+	height: 40%;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+}
+#home {
+	position: relative;
+}
+#home a {
+	color: gray;
+	font-weight: bolder;
+	text-decoration: none;
+}
+#home a:hover {
+	color: black;
+	text-decoration: underline;
+}
+#backhome {
+	position: absolute; 
+	top: 60px; 
+	left: 10px;
+	background-color: white; 
+	border-radius: 10px; 
+	display: inline-block; 
+	padding: 10px;
+}

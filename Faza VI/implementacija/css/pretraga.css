@@ -1,0 +1,390 @@
+/*Napravio: Aleksa Funduk 2014/0219*/
+body {
+	margin: 0; 
+	padding: 0;
+	font-family: arial;
+	background-color: gray;
+	background-image: url('../images/belgrade.jpg');
+	background-repeat: no-repeat;
+	background-size: 100vw auto;
+	background-attachment: fixed;
+	font-family: arial;
+	font-size: 14px;
+}
+.center {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%); 
+}
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+.button {
+	padding: 5px;
+	padding-bottom: 10px;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-family: arial;
+	font-weight: 900;
+	border: none;
+	box-shadow: inset 0px -5px #edbd02;
+	background-color: #ffe630;
+}
+.button:hover {
+	background-color: #ffea5b;
+}
+.button:active {
+	box-shadow: inset 0px -3px #edbd02;
+	transform: translateY(2px);
+	padding-bottom: 8px;
+}
+.favbutton {
+	padding: 5px;
+	padding-bottom: 6px;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+	font-family: arial;
+	font-weight: 900;
+	border: none;
+	box-shadow: inset 0px -5px #edbd02;
+	background-color: #ffe630;
+}
+.favbutton:hover {
+	background-color: #ffea5b;
+}
+.favbutton:active {
+	box-shadow: inset 0px -3px #edbd02;
+	transform: translateY(2px);
+	padding-bottom: 4px;
+}
+.button:focus, .favbutton:focus {
+	outline:none;
+}
+#backtopbutton {
+	border-collapse: separate;
+	cursor: pointer;
+	border-radius: 8px;
+	border: 5px solid #ffe630;
+	box-shadow: 0px 5px #edbd02;
+}
+#backtopbutton:hover {
+	border: 5px solid #ffea5b;
+}
+#backtopbutton:active {
+	box-shadow: 0px 3px #edbd02;
+	transform: translateY(2px);
+}
+.innerbutton {
+	border-radius: 3px; 
+	box-shadow: inset 0px 5px #edbd02; 
+	padding: 9px;
+	padding-bottom: 14px;
+	padding-top:11px;  
+	color: black;
+}
+#backtopbutton:active .innerbutton {
+	box-shadow: inset 0px 3px #edbd02; 
+}
+.arrow {
+	width: 0; 
+	height: 0; 
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-bottom: 18px solid #ffe630;
+	box-shadow: 0 5px 0px #edbd02;
+}
+#backtopbutton:hover .arrow {
+	border-bottom: 18px solid #ffea5b;
+}
+#backtopbutton:active .arrow {
+	box-shadow: 0 3px 0px #edbd02;
+}
+#info-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: rgba(0,0,0, 0.5);
+	border-bottom: 1px solid white;
+}
+#date {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translate(0, -50%);
+	color: white;
+}
+#button-holder {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
+}
+#favoriti {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	cursor:pointer;
+	overflow: hidden;
+	outline:none;
+	vertical-align: middle;
+
+	border: 1px solid #ffe630;
+	border-radius: 4px;
+	padding: 8px;
+	color: #ffe630;
+	font-weight: bold;
+}
+#favoriti:hover {
+	background-color: #ffe630;
+	color: black;
+}
+#separator {
+	display: inline-block;
+	background-color: white; 
+	width: 1px;
+	height: 25px;
+	margin-right: 20px;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+#logo-holder {
+	height: 40%;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+}
+#backhome {
+	position: absolute; 
+	top: 60px; 
+	left: 10px;
+	background-color: white; 
+	border-radius: 10px; 
+	display: inline-block; 
+	padding: 10px;
+}
+#home {
+	position: relative;
+}
+#home a {
+	color: gray;
+	font-weight: bolder;
+	text-decoration: none;
+}
+#home a:hover {
+	color: black;
+	text-decoration: underline;
+}
+#backtop {
+	position: fixed;
+	left: 20px;
+	bottom: 25px;
+	z-index: 100;
+}
+#infobox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #ffea5b;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 0 0 3px 2px black;
+	z-index: 300;
+	opacity: .9;
+}
+/*!!wrapper-left!!*/
+#wrapper {
+	margin-top: 60vh;
+	position: relative;
+	padding-bottom: 10vh;
+	text-align: center;
+}
+#wrapper-bg {
+	position: absolute;
+	background-color: white;
+	height: calc(100% - 40vh);
+	width: 100%;
+	top: 40vh;
+	left: 0;
+	z-index: 99;
+}
+#wrapper-left {
+	box-shadow: 0px 0px 5px gray;
+	z-index: 100;
+	position: relative;
+	width: 52.5%; 
+	min-width: 644px;
+	max-width: 787px;
+	background-color: white; 
+	border-radius: 10px;
+	display: inline-block;
+}
+#results-header {
+	position: relative;
+	background-color: #ffea5b;
+	height: 65px;
+	border-radius: 8px 8px 0px 0px;
+	border-bottom: 1px solid black;
+}
+.popust {
+	color: white;
+	font-weight: bold;
+	z-index: 101;
+	position: absolute;
+	background-color: gold;
+	border: 1px solid  black;
+	width: 200px;
+	top: 10px;
+	left: -10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+.add-favor-button-holder {
+	position: absolute; 
+	top: 100px; 
+	right: 10px;
+	z-index: 200;
+}
+.add-thumbnail-holder {
+	width: 250px; 
+	height: 100%;
+	position: relative; 
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+}
+.add-thumnail-holder-img {
+	max-height: 100%; 
+	position: absolute; 
+	top: 0; 
+	left: 0;
+}
+.add-info-holder {
+	position: relative; 
+	width: calc(100% - 250px); 
+	width: -moz-calc(100% - 250px); 
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+.add-info-header {
+	height: 30px; 
+	position: relative; 
+	border-bottom: 1px solid black;
+	vertical-align: top;
+}
+.add-id-holder {
+	position: absolute; 
+	top:0; 
+	right: 0; 
+	background-color: black; 
+	color: white; 
+	width: 102px; 
+	height: 100%; 
+	font-weight: bold;
+}
+.add-link {
+	font-weight: bold;
+	color: black; 
+	display: inline-block; 
+	width: 100%; 
+	height: 100%;
+}
+.add-link:hover {
+	text-decoration: underline;
+	background-color: #FFFF99;
+}
+.add-info-table {
+	margin-left: 10px;
+	width: 70%;
+	max-width: 376px;
+	font-size: 14px;
+}
+.add-info-table td {
+	border-bottom: 1px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.add-price-area {
+	position: absolute; 
+	bottom: 0; 
+	right: 0; 
+	background-color: #ffe630; 
+	border: 1px solid black; 
+	border-bottom: none; 
+	width: 100px; 
+	height: 60px; 	
+	text-align: center; 	
+	font-weight: bold;
+}
+.add {
+	position: relative;
+	margin: 0;
+	height: 250px;
+	width: 100%;
+	border-bottom: 2px solid black;
+}
+.add-info-holder>table>tr {
+	padding-bottom: 20px;
+}
+a:hover {
+	text-decoration: underline;
+}
+#loadmore {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#loadmore:active {
+	margin-bottom: 22px;
+}
+#loadmore:disabled {
+	background-color: #ffea5b;
+	box-shadow: inset 0px -5px gold;
+}
+#loadmore:disabled:hover {
+	cursor: not-allowed;
+}
+/*!!wrapper-right!!*/
+#wrapper-right {
+	box-shadow: 0px 0px 5px gray;
+	padding-bottom: 20px;
+	display: inline-block;
+	z-index: 100;
+	width: 20%; 
+	min-width: 270px;
+	max-width: 300px;
+	background-color: white; 
+	border-radius: 10px; 
+	position: relative; 
+	margin-left: 2.5%;
+	vertical-align: top;
+	text-align: center;
+	font-size: 14px;
+}
+#wrapper-right hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+input[type=number] {
+	width: 55px;
+}
+input[type=reset] {
+	background-image: url('../images/refreshicon.svg');
+	background-position: center 4.5px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	vertical-align: middle;
+}
+/*!!footer!!*/
